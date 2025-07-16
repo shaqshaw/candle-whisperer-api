@@ -1,67 +1,132 @@
-# Candle Whisperer API
+# Candle Whisperer API & Frontend
 
-This is a modern React + TypeScript starter project using Vite, Tailwind CSS, and shadcn-ui components. It provides a clean foundation for building your own web application, with a focus on rapid development and customization.
+A full-stack project for deploying a Bayesian CRNN Trading Model with Monte Carlo Dropout and quantum layers (TFQ). The backend is a FastAPI service, and the frontend is a modern React app styled with Tailwind CSS and shadcn-ui components.
 
-## Features
-- ⚡️ Fast development with Vite
-- 🎨 Utility-first styling with Tailwind CSS
-- 🧩 Accessible, customizable UI components (shadcn-ui)
-- 🛣️ Client-side routing (react-router-dom)
-- 🧹 Pre-configured for best practices
+---
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Requirements](#requirements)
+- [Getting Started](#getting-started)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Set Up the Backend (FastAPI)](#2-set-up-the-backend-fastapi)
+  - [3. Set Up the Frontend (React)](#3-set-up-the-frontend-react)
+- [Development Workflow](#development-workflow)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## Project Overview
+
+**Title:** Deploy Bayesian CRNN Trading Model with Monte Carlo Dropout on Lovable.dev
+
+**Goal:** Build a machine learning API that accepts candlestick pattern image sequences and returns class predictions along with uncertainty, using a Bayesian CRNN model with Monte Carlo Dropout and quantum layers (TFQ).
+
+---
+
+## Requirements
+
+- **Node.js** (v18+ recommended)
+- **npm** (v9+ recommended)
+- **Python** (3.9+ recommended)
+- **pip** (comes with Python)
+
+---
 
 ## Getting Started
 
-### 1. Install dependencies
+### 1. Clone the Repository
+
 ```sh
-npm install
+git clone <your-repo-url>
+cd candle-whisperer-api
 ```
 
-### 2. Start the development server
-```sh
-npm run dev
-```
+### 2. Set Up the Backend (FastAPI)
 
-Visit [http://localhost:8080](http://localhost:8080) to view your app.
-
-### 3. Build for production
-```sh
-npm run build
-```
-
-### 4. Preview the production build
-```sh
-npm run preview
-```
-
-## Project Structure
-- `src/` — Main source code
-  - `components/ui/` — Ready-to-use UI components
-  - `pages/` — App pages (add your own here)
-  - `hooks/`, `lib/` — Utilities and custom hooks
-- `public/` — Static assets
-- `index.html` — HTML entry point
-
-## Customization
-- Add your own pages in `src/pages/` and update routes in `src/App.tsx`.
-- Use and customize UI components from `src/components/ui/`.
-- Update styles and design tokens in `src/index.css` and `tailwind.config.ts`.
-
-## Database
-This template does **not** include any database integration. You are free to set up your own backend or database solution as needed.
-
-## Backend API (Python + FastAPI)
-
-A Python FastAPI backend is included in the `backend/` directory. This serves as the API for your application.
-
-### How to run the backend
-
-1. Navigate to the backend directory:
+1. **Create and activate a virtual environment:**
    ```sh
    cd backend
+   python3 -m venv venv
+   source venv/bin/activate
    ```
-2. Follow the instructions in `backend/README.md` to set up and run the API server.
+2. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Run the backend server:**
+   ```sh
+   uvicorn main:app --reload
+   ```
+   - The API will be available at [http://localhost:8000](http://localhost:8000)
+   - Interactive API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-See [`backend/README.md`](backend/README.md) for more details.
+### 3. Set Up the Frontend (React)
+
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Run the frontend app:**
+   ```sh
+   npm run dev
+   ```
+   - The UI will be available at [http://localhost:8080](http://localhost:8080) (or the port shown in your terminal)
+   - Visit [http://localhost:8080/docs](http://localhost:8080/docs) for usage instructions and API documentation
+
+---
+
+## Development Workflow
+
+- **Create a new branch for your work:**
+  ```sh
+  git checkout -b <your-feature-branch>
+  ```
+- **Make your changes and commit:**
+  ```sh
+  git add .
+  git commit -m "Describe your changes"
+  ```
+- **Push your branch:**
+  ```sh
+  git push origin <your-feature-branch>
+  ```
+- **Open a Pull Request** on GitHub to merge your changes.
+
+---
+
+## API Documentation
+
+- **Frontend Docs Page:** [http://localhost:8080/docs](http://localhost:8080/docs)
+- **Backend Interactive Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### Example Endpoints
+
+- **POST /predict**
+  ```sh
+  curl -X POST http://localhost:8000/predict \
+    -H "Content-Type: application/json" \
+    -d '{"input_data": "test value"}'
+  ```
+- **GET /trade**
+  ```sh
+  curl http://localhost:8000/trade
+  ```
+
+---
+
+## Contributing
+
+1. Fork the repository and clone your fork.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch and open a Pull Request.
+5. Ensure your code passes linting and tests (if applicable).
+
+---
 
 ## License
+
 MIT
