@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# Candle Whisperer API
 
-## Project info
+This is a modern React + TypeScript starter project using Vite, Tailwind CSS, and shadcn-ui components. It provides a clean foundation for building your own web application, with a focus on rapid development and customization.
 
-**URL**: https://lovable.dev/projects/ff8a972a-649d-424f-a25a-4cdfd1399551
+## Features
+- ⚡️ Fast development with Vite
+- 🎨 Utility-first styling with Tailwind CSS
+- 🧩 Accessible, customizable UI components (shadcn-ui)
+- 🛣️ Client-side routing (react-router-dom)
+- 🧹 Pre-configured for best practices
 
-## How can I edit this code?
+## Getting Started
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/ff8a972a-649d-424f-a25a-4cdfd1399551) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+### 1. Install dependencies
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 2. Start the development server
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit [http://localhost:8080](http://localhost:8080) to view your app.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Build for production
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+### 4. Preview the production build
+```sh
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
+- `src/` — Main source code
+  - `components/ui/` — Ready-to-use UI components
+  - `pages/` — App pages (add your own here)
+  - `hooks/`, `lib/` — Utilities and custom hooks
+- `public/` — Static assets
+- `index.html` — HTML entry point
 
-## What technologies are used for this project?
+## Customization
+- Add your own pages in `src/pages/` and update routes in `src/App.tsx`.
+- Use and customize UI components from `src/components/ui/`.
+- Update styles and design tokens in `src/index.css` and `tailwind.config.ts`.
 
-This project is built with:
+## Database
+This template does **not** include any database integration. You are free to set up your own backend or database solution as needed.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Backend API (Python + FastAPI)
 
-## How can I deploy this project?
+A Python FastAPI backend is included in the `backend/` directory. This serves as the API for your application.
 
-Simply open [Lovable](https://lovable.dev/projects/ff8a972a-649d-424f-a25a-4cdfd1399551) and click on Share -> Publish.
+### How to run the backend
 
-## Can I connect a custom domain to my Lovable project?
+1. Navigate to the backend directory:
+   ```sh
+   cd backend
+   ```
+2. Follow the instructions in `backend/README.md` to set up and run the API server.
 
-Yes, you can!
+See [`backend/README.md`](backend/README.md) for more details.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+MIT

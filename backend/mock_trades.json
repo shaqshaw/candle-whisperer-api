@@ -1,0 +1,18 @@
+[
+  {
+    "trade_id": 1,
+    "symbol": "BTCUSD",
+    "action": "buy",
+    "amount": 0.5,
+    "price": 65000.0,
+    "timestamp": "2024-07-01T12:00:00Z"
+  },
+  {
+    "trade_id": 2,
+    "symbol": "ETHUSD",
+    "action": "sell",
+    "amount": 1.2,
+    "price": 3500.0,
+    "timestamp": "2024-07-01T13:00:00Z"
+  }
+] 
