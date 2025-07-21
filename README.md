@@ -119,11 +119,10 @@ cd candle-whisperer-api
 
 ## Contributing
 
-1. Fork the repository and clone your fork.
-2. Create a new branch for your feature or bugfix.
-3. Make your changes and commit them with clear messages.
-4. Push your branch and open a Pull Request.
-5. Ensure your code passes linting and tests (if applicable).
+1. Create a new branch for your feature or bugfix.
+2. Make your changes and commit them with clear messages.
+3. Push your branch and open a Pull Request.
+4. Ensure your code passes linting and tests (if applicable).
 
 ---
 
