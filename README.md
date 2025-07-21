@@ -2,20 +2,20 @@
 
 ```mermaid
 flowchart TD
-    A["User Interface (React App)"]
+    A["User Interface<br/>(React App)"]
     X["External Client"]
-    AV["Alpha Vantage (External Data)"]
-    subgraph B["Candle Whisperer API (FastAPI)"]
-        B1["/predict (WebSocket)"]
-        B2["/trade (GET)"]
+    AV["Alpha Vantage<br/>(External Data)"]
+    subgraph B["API<br/>(FastAPI)"]
+        B1["/predict<br/>(WebSocket)"]
+        B2["/trade<br/>(GET)"]
         B3["/ (docs/info)"]
-        subgraph BE["Prediction Engine (Scheduled)"]
+        subgraph BE["Prediction Engine<br/>(Scheduled)"]
             CNN["CNN"]
             RNN["RNN"]
         end
     end
-    C1["predictions table"]
-    C2["trades table"]
+    C1["predictions<br/>table"]
+    C2["trades<br/>table"]
 
     A -- "GET" --> B3
     X -- "WebSocket" --> B1
