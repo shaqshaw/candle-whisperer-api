@@ -9,7 +9,10 @@ flowchart TD
         B1["/predict (WebSocket)"]
         B2["/trade (GET)"]
         B3["/ (docs/info)"]
-        BE["Prediction Engine (Scheduled)"]
+        subgraph BE["Prediction Engine (Scheduled)"]
+            CNN["CNN"]
+            RNN["RNN"]
+        end
     end
     C1["predictions table"]
     C2["trades table"]
