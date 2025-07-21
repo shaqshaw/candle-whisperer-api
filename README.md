@@ -4,10 +4,12 @@
 flowchart TD
     A["User Interface (React App)"]
     X["External Client"]
+    AV["Alpha Vantage (External Data)"]
     subgraph B["Candle Whisperer API (FastAPI)"]
         B1["/predict (WebSocket)"]
         B2["/trade (GET)"]
         B3["/ (docs/info)"]
+        BE["Prediction Engine (Scheduled)"]
     end
     C1["predictions table"]
     C2["trades table"]
@@ -17,6 +19,9 @@ flowchart TD
     X -- "GET" --> B2
     B1 -- "fetches" --> C1
     B2 -- "fetches" --> C2
+    BE -- "writes" --> C1
+    BE -- "writes" --> C2
+    BE -- "fetches data" --> AV
 ```
 
 # Candle Whisperer API & Frontend
