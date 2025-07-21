@@ -3,27 +3,20 @@
 ```mermaid
 flowchart TD
     A["User Interface (React App)"]
-    B["FastAPI Backend API"]
-    C["Mock JSON Files or Database"]
-
-    A -- "HTTP Request: /predict, /trade" --> B
-    B -- "Reads/Writes" --> C
-    B -- "Response" --> A
-
-    subgraph "API Endpoints"
-        B1["POST /predict"]
-        B2["GET /trade"]
-        B3["GET /"]
+    X["External Client"]
+    subgraph B["Candle Whisperer API (FastAPI)"]
+        B1["/predict (WebSocket)"]
+        B2["/trade (GET)"]
+        B3["/ (docs/info)"]
     end
+    C1["predictions table"]
+    C2["trades table"]
 
-    B --> B1
-    B --> B2
-    B --> B3
-
-    B1 -- "Save Prediction" --> C
-    B2 -- "Save Trade" --> C
-
-    A -.->|"Docs"| B3
+    A -- "GET" --> B3
+    X -- "WebSocket" --> B1
+    X -- "GET" --> B2
+    B1 -- "fetches" --> C1
+    B2 -- "fetches" --> C2
 ```
 
 # Candle Whisperer API & Frontend
